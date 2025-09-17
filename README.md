@@ -11,7 +11,3 @@ Dự án quản lý đặt lịch họp thông minh (Spring Boot + ReactJS + MyS
 - Docker (tùy chọn)
 
 ## ▶️ Cách chạy
-### Backend
-```bash
-cd backend
-mvn spring-boot:run
