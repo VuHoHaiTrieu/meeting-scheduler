@@ -1,0 +1,238 @@
+/* MiniCalendar.css - DARK THEME */
+.calendar-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* CALENDAR */
+.calendar {
+  background: white !important;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 5px;
+  flex-shrink: 0;
+  position: relative;
+  color: #202124 !important;
+  box-shadow: none !important;
+  border: 1px solid #dadce0;
+  min-height: 320px;
+  width: 100%;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 0;
+  border-bottom: none;
+  width: 100%;
+  gap: 8px;
+}
+
+.month-year-display {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3c4043;
+  white-space: nowrap;
+  text-align: center;
+  flex: 1;
+  order: 2;
+}
+
+.calendar-nav-buttons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.nav-btn {
+  width: 32px !important;
+  height: 32px !important;
+  border: 1px solid #dadce0 !important;
+  border-radius: 6px;
+  background: #f8f9fa !important;
+  color: #5f6368 !important;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px !important;
+  font-weight: normal;
+  transition: all 0.2s;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-btn:hover {
+  background-color: #e8eaed !important;
+  border-color: #5f6368 !important;
+}
+
+.nav-btn:active {
+  background-color: #e8eaed;
+}
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.week-day {
+  text-align: center;
+  font-weight: 500;
+  color: #70757a;
+  font-size: 12px;
+  padding: 8px 0;
+}
+
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.calendar-day {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+  color: #3c4043 !important;
+  background: transparent;
+  font-weight: 500 !important;
+}
+
+.calendar-day:hover {
+  background-color: #f1f3f4;
+}
+
+.calendar-day.selected {
+  background-color: #1a73e8;
+  color: white;
+  font-weight: 500;
+}
+
+.calendar-day.other-month {
+  color: #dadce0;
+  font-weight: 400;
+}
+
+.calendar-day.past-date {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+  color: #9aa0a6;
+}
+
+.calendar-day.past-date:hover {
+  background-color: transparent;
+}
+
+.calendar-day.today {
+  background-color: transparent;
+  color: #1a73e8;
+  font-weight: 600;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* When today is also selected */
+.calendar-day.today.selected {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+}
+
+/* Navigation buttons - ĐẶT NGOÀI CALENDAR */
+.calendar-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--component-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--component-bg);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.nav-button:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.nav-button:active {
+  transform: scale(0.95);
+}
+
+.nav-button.prev::before {
+  content: "‹";
+}
+
+.nav-button.next::before {
+  content: "›";
+}
+
+.month-display {
+  font-size: 14px;
+  color: var(--text-color);
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .calendar {
+    padding: 15px;
+  }
+  
+  .calendar-navigation {
+    gap: 10px;
+    padding: 8px;
+  }
+  
+  .nav-button {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .month-display {
+    font-size: 13px;
+    min-width: 50px;
+  }
+}
